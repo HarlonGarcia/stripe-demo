@@ -1,37 +1,32 @@
-const fakeDonations = [
-  {
-    id: 1,
-    name: 'Lucas',
-    email: 'lucas@gmail.com',
-    amount: 100,
-    date: '11/04/2025',
-  },
-  {
-    id: 2,
-    name: 'Ana',
-    email: 'ana@gmail.com',
-    amount: 200,
-    date: '11/04/2025',
-  },
-  {
-    id: 3,
-    name: 'Marcos',
-    email: 'marcos@gmail.com',
-    amount: 150,
-    date: '11/04/2025',
-  },
-];
+import dayjs from 'dayjs';
+import { getDonations } from '../../../../services/queries/donations';
+import { useQuery } from '@tanstack/react-query';
 
 const Donations = () => {
+  const { data: donations = [] } = useQuery({
+    queryKey: ['donations'],
+    queryFn: getDonations,
+  })
+
+  if (!donations.length) {
+    return (
+      <div className='flex flex-col items-center justify-center gap-4 h-[300px] text-indigo-300/10 text-4xl font-bold'>
+          <h1>
+            Nenhuma doação encontrada
+          </h1>
+          <span>{`:/`}</span>
+      </div>
+    )
+  }
   return (
     <div className='flex flex-col gap-3'>
-        {fakeDonations.map(({ id, name, email, amount, date }) => (
+        {donations.map(({ name, email, amount, date }, index) => (
           <div
             className='flex items-center justify-between py-3 px-4 bg-indigo-950/60 rounded-lg shadow-md'
-            key={id}
+            key={index}
           >
             <div className='flex flex-col gap-1'>
-              <h2 key={id} className='text-indigo-400'>
+              <h2 className='text-indigo-400'>
                 {name}
               </h2>
               <span className='text-indigo-100'>
@@ -43,7 +38,7 @@ const Donations = () => {
                 R$ {amount}
               </span>
               <small className='text-indigo-100'>
-                {date}
+                {dayjs(date).format('DD/MM/YYYY')}
               </small>
             </div>
           </div>

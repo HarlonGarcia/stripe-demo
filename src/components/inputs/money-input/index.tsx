@@ -22,7 +22,9 @@ const MoneyInput = ({ label, currency, onCurrencyChange, ...rest }: MoneyInputPr
       </label>
       <div className='mt-1'>
         <div className='flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600'>
-          <div className='shrink-0 text-base text-gray-500 select-none sm:text-sm/6'>$</div>
+          <div className='shrink-0 text-base text-gray-500 select-none sm:text-sm/6'>
+            {currency === 'USD' ? '$' : 'R$'}
+          </div>
           <input
             id='price'
             name='price'

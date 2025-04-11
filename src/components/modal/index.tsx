@@ -3,6 +3,7 @@ import EmailInput from '../inputs/email-input';
 import MoneyInput from '../inputs/money-input';
 import TextInput from '../inputs/text-input';
 import { sendDonation } from '../../services/queries/donations';
+import { useMutation } from '@tanstack/react-query';
 
 interface ModalProps {
   title: string;
@@ -15,6 +16,16 @@ const Modal = ({ title, isOpen, onClose }: ModalProps) => {
   const [email, setEmail] = useState('');
   const [amount, setAmount] = useState('');
   const [currency, setCurrency] = useState<'USD' | 'BRL'>('BRL');
+
+  const { mutate: donate } = useMutation({
+    mutationFn: (payload: IDonation) => sendDonation(
+      payload,
+      () => {
+        resetValues();
+        onClose();
+      },
+    ),
+  })
 
   const resetValues = () => {
     setName('');
@@ -30,10 +41,7 @@ const Modal = ({ title, isOpen, onClose }: ModalProps) => {
       currency,
     }
 
-    sendDonation(payload, () => {
-      resetValues();
-      onClose();
-    });
+    donate(payload);
   }
 
   if (!isOpen) {
@@ -46,7 +54,7 @@ const Modal = ({ title, isOpen, onClose }: ModalProps) => {
         <div className='flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'>
           <div className='relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg'>
             <div className='bg-white p-10'>
-              <div className='sm:flex sm:items-start'>
+              <div className='sm:flex sm:items-start w-full'>
                 <div className='mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left'>
                   <h3
                     id='modal-title'
