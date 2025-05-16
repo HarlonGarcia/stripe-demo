@@ -10,7 +10,7 @@ const Donations = () => {
 
   if (!donations.length) {
     return (
-      <div className='flex flex-col items-center justify-center gap-4 h-[300px] text-indigo-300/10 text-4xl font-bold'>
+      <div className='flex flex-col items-center justify-center gap-4 h-[300px] text-gray-200 text-4xl font-bold'>
           <h1>
             Nenhuma doação encontrada
           </h1>

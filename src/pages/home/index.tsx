@@ -1,27 +1,18 @@
-import { useContext } from 'react';
-import Modal from '../../components/modal';
-import Wrapper from '../../components/wrapper';
-import Donations from './partials/donations';
-import { GlobalContext } from '../../contexts/GlobalContext';
-import { ToastContainer } from 'react-toastify';
+import Wrapper from "../../components/wrapper";
 
-const Home = () => {
-  const { isDonateModalOpen, setIsDonateModalOpen } = useContext(GlobalContext);
-
+export default function Home() {
   return (
-    <Wrapper>
-      <div className='w-[90%] mx-auto'>
-        <h1 className='text-2xl text-gray-950 mb-5'>Ultimas doações</h1>
-        <Donations />
-      </div>
-      <Modal
-        isOpen={isDonateModalOpen}
-        onClose={() => setIsDonateModalOpen(false)}
-        title='Preencha os dados para a doação'
-      />
-      <ToastContainer />
-    </Wrapper>
-  );
-}
+    <>
+     <Wrapper>
+       <main className='w-[90%] mx-auto'>
+        <h1 className="text-orange-500 text-3xl font-bold">
+          Projetos Freelancer:
+        </h1>
 
-export default Home;
+
+
+       </main>
+     </Wrapper>
+    </>
+  )
+}
