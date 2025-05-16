@@ -15,7 +15,9 @@ const NavItems = () => {
       <ul className='flex gap-5 items-center'>
         <li className=''>
           <Button title="Faça uma doação" bgColor="transparent" color="text-orange-500">
-            <Wallet/>
+            <a href="" target="_blank">
+              <Wallet/>
+            </a>
           </Button>
         </li>
 
