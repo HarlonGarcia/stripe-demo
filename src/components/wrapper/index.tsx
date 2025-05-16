@@ -8,7 +8,7 @@ interface WrapperProps {
 
 const Wrapper = ({ children, className }: PropsWithChildren<WrapperProps>) => {
   const classes = classNames(
-    'py-40 w-full h-screen bg-gradient-to-b from-slate-950 to-indigo-900/50',
+    'py-40 w-full h-screen bg-gray-50',
     className,
   );
 

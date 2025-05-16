@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <Wrapper>
       <div className='w-[90%] mx-auto'>
-        <h1 className='text-2xl text-indigo-200 mb-5'>Ultimas doações</h1>
+        <h1 className='text-2xl text-gray-950 mb-5'>Ultimas doações</h1>
         <Donations />
       </div>
       <Modal
