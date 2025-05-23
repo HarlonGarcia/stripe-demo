@@ -16,7 +16,7 @@ import SpinnerWrapper from '@/components/spinner';
 
 export default function Details() {
   const { id } = useParams();
-  const { isAddPostModalOpen, setAddPostModalOpen } = useContext(GlobalContext);
+  const { isAddSuggestionModalOpen, setAddSuggestionModalOpen } = useContext(GlobalContext);
   const navigate = useNavigate();
   
   const {
@@ -80,7 +80,7 @@ export default function Details() {
                   </div>
                 </div>
                 <button
-                  onClick={() => setAddPostModalOpen(true)}
+                  onClick={() => setAddSuggestionModalOpen(true)}
                   className='flex items-center gap-2 py-1.5 px-3 text-sm rounded-md text-white bg-orange-500 cursor-pointer'
                 >
                   <span>Estou interessado</span>
@@ -118,11 +118,11 @@ export default function Details() {
 
         <SuggestionModal
           title='Adicionar sugestão'
-          open={isAddPostModalOpen}
+          open={isAddSuggestionModalOpen}
           okButtonText='Adicionar'
           cancelButtonText='Cancelar'
-          onClose={() => setAddPostModalOpen(false)}
-          onConfirm={() => setAddPostModalOpen(false)}
+          onClose={() => setAddSuggestionModalOpen(false)}
+          onConfirm={() => setAddSuggestionModalOpen(false)}
         />
       </SpinnerWrapper>
     </Wrapper>

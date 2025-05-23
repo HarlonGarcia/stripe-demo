@@ -4,7 +4,7 @@ const role = {
   createdAt: new Date(),  
 }
 
-const user = {
+const defaultUser = {
   id: "1",
   role,
   fullName: "Harlon Garcia",
@@ -13,6 +13,12 @@ const user = {
   updatedAt: new Date(),
   publications: [],
   suggestions: [],
+}
+
+export const user = {
+  id: '10000000-0000-0000-0000-000000000001',
+  fullName: 'Breno Duarte',
+  email: 'breno.duarte@example.com',
 }
 
 const suggestions = [
@@ -30,7 +36,7 @@ const suggestions = [
 export const publications = [
   {
     id: "1",
-    user,
+    user: defaultUser,
     title: "Web Development Project",
     description: "Looking for a skilled developer to create a responsive website.",
     suggestions,
@@ -40,7 +46,7 @@ export const publications = [
   },
   {
     id: "2",
-    user,
+    user: defaultUser,
     title: "Graphic Design",
     description: "Need a creative designer for logo and branding materials.",
     suggestions,
@@ -50,7 +56,7 @@ export const publications = [
   },
   {
     id: "3",
-    user,
+    user: defaultUser,
     title: "Social Media Management",
     description: "Manage our social media accounts and create content. Experience required. Must be able to work in a team and meet deadlines. Apply now! Salary negotiable. Open to remote work. Urgent need. Highly motivated individuals preferred. Flexible hours available.",
     suggestions,
@@ -60,7 +66,7 @@ export const publications = [
   },
   {
     id: "4",
-    user,
+    user: defaultUser,
     title: "UX/UI Design",
     description: "Redesign our app for a better user experience.",
     suggestions,
@@ -70,7 +76,7 @@ export const publications = [
   },
   {
     id: "5",
-    user,
+    user: defaultUser,
     title: "Content Writing",
     description: "Looking for a writer to create engaging blog posts.",
     suggestions,
@@ -80,7 +86,7 @@ export const publications = [
   },
   {
     id: "6",
-    user,
+    user: defaultUser,
     title: "SEO Optimization",
     description: "Optimize our website for better search engine ranking.",
     suggestions,

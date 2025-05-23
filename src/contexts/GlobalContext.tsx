@@ -2,20 +2,25 @@
 import { createContext, PropsWithChildren, useState } from 'react';
 
 interface GlobalContextProps {
-  isAddPostModalOpen: boolean;
-  setAddPostModalOpen: (isOpen: boolean) => void;
+  isAddSuggestionModalOpen: boolean;
+  setAddSuggestionModalOpen: (isOpen: boolean) => void;
+  isAddPublicationModalOpen: boolean;
+  setAddPublicationModalOpen: (isOpen: boolean) => void;
 }
 
 export const GlobalContext = createContext({} as GlobalContextProps);
   
 export const GlobalProvider = ({ children }: PropsWithChildren) => {
-  const [isAddPostModalOpen, setAddPostModalOpen] = useState(false);
+  const [isAddSuggestionModalOpen, setAddSuggestionModalOpen] = useState(false);
+  const [isAddPublicationModalOpen, setAddPublicationModalOpen] = useState(false);
 
   return (
     <GlobalContext.Provider
       value={{
-        isAddPostModalOpen,
-        setAddPostModalOpen,
+        isAddSuggestionModalOpen,
+        setAddSuggestionModalOpen,
+        isAddPublicationModalOpen,
+        setAddPublicationModalOpen,
       }}
     >
       {children}

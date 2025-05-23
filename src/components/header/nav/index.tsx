@@ -5,7 +5,7 @@ import { BellIcon, PlusIcon, Wallet } from 'lucide-react';
 import { GlobalContext } from '@/contexts/GlobalContext';
 
 const NavItems = () => {
-  const { openAddPostModal } = useContext(GlobalContext);
+  const { setAddPublicationModalOpen } = useContext(GlobalContext);
 
   return (
     <nav className='flex gap-5 items-center'>
@@ -24,7 +24,7 @@ const NavItems = () => {
           <button
             className='flex items-center gap-2 text-base py-1.5 px-3 rounded-md bg-orange-500
             text-white transition-all duration-300 ease-in-out hover:bg-orange-600'
-            onClick={openAddPostModal}
+            onClick={() => setAddPublicationModalOpen(true)}
           >
             <PlusIcon className='w-5 h-5' />
             <span>Nova postagem</span>
