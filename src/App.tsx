@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
-import Header from './components/header'
-import Home from './pages/home'
-import Wallet from './pages/wallet';
-import PostDemo from "./pages/post-demo";
+
+import Header from '@/components/header'
+import Home from '@/pages/home'
+import Wallet from '@/pages/wallet';
+import Details from "@/pages/details";
+import NotFound from './pages/not-found';
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wallet" element={<Wallet />} />
-        <Route path="/post-demo" element={<PostDemo/>} />
+        <Route path="/details/:id" element={<Details/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   )

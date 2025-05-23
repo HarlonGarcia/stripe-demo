@@ -1,12 +1,12 @@
-import { useContext } from 'react';
-import Modal from '../../components/modal';
+// import { useContext } from 'react';
+// import Modal from '../../components/modal';
 import Wrapper from '../../components/wrapper';
 import Donations from './partials/donations';
-import { GlobalContext } from '../../contexts/GlobalContext';
+// import { GlobalContext } from '../../contexts/GlobalContext';
 import { ToastContainer } from 'react-toastify';
 
 const Wallet = () => {
-  const { isDonateModalOpen, setIsDonateModalOpen } = useContext(GlobalContext);
+  // const { isDonateModalOpen, setIsDonateModalOpen } = useContext(GlobalContext);
 
   return (
     <Wrapper>
@@ -15,11 +15,11 @@ const Wallet = () => {
 
         <Donations />
       </div>
-      <Modal
+      {/* <ModalDonate
         isOpen={isDonateModalOpen}
         onClose={() => setIsDonateModalOpen(false)}
         title='Preencha os dados para a doação'
-      />
+      /> */}
       <ToastContainer />
     </Wrapper>
   );

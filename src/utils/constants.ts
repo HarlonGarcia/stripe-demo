@@ -1,0 +1,7 @@
+const DATE_FORMAT = 'DD/MM/YYYY';
+const FULL_DATE_FORMAT = 'DD/MM/YYYY HH:mm:ss';
+
+export {
+  DATE_FORMAT,
+  FULL_DATE_FORMAT,
+}

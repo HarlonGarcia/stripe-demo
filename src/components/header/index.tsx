@@ -5,9 +5,10 @@ import AppLogo from "../logo";
 const Header = () => {
   return (
     <div
-      className='fixed left-[calc(50%-45%)] top-0 pt-6 flex items-center justify-between w-[90%] p-4 bg-gray-50'
+      className='fixed flex items-center justify-between w-[90%] left-[5%] top-0 pt-6 p-4
+      z-10 bg-gray-50 border-b border-gray-200'
     >
-        <AppLogo/>
+      <AppLogo />
       <NavItems />
     </div>
   )

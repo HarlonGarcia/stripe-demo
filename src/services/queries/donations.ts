@@ -10,8 +10,6 @@ export const getDonations = async (): Promise<IDonation[]> => {
 export const sendDonation = async (payload: IDonation, callback: () => void) => {
   const { data } = await api.post('/receive-donation', payload);
 
-  console.log('data', data);
-
   if (data.status !== 200) {
     toast.error('Ocorreu algum erro, tente novamente!');
     throw new Error('Failed to send donation');
